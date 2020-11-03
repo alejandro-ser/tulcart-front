@@ -1,0 +1,34 @@
+<form class="card m-3">
+    <input  [formControl]="name"
+            class="p-2 mb-2" placeholder="Nombre"/>
+
+    <input  [formControl]="sku"
+            class="p-2 mb-2" placeholder="Sku"/>
+
+    <input  [formControl]="description"
+            class="p-2 mb-2" placeholder="Description"/>
+
+    <button (click)="addProduct()" class="btn btn-success">
+          Aceptar
+    </button>
+</form>
+
+<ul class="list-group m-3">
+    <li class="list-group-item" *ngFor="let product of products">
+        <p>{{product.id}}</p>
+        <p>{{product.name}}</p>
+        <p>{{product.sku}}</p>
+        <p>{{product.description}}</p>
+        <div class="d-flex flex-md-row-reverse"></div>
+        <button (click)="deleteProduct(product.id)"
+           class="btn btn-danger mr-2">
+            Elminiar
+        </button>
+        <button (click)="getProduct(product.id)"
+            class="btn btn-success">
+            Actualizar
+        </button>
+    </li>
+
+</ul>
+
