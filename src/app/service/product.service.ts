@@ -38,4 +38,12 @@ export class ProductService {
         obj.append("description", description)
         return this._http.post(this.URL+'/update', obj)
     }
+
+    addProductToCart(product_id:string, cart_id:string, quantity:string): Observable<any>{
+        let obj = new FormData()
+        obj.append("product_id", product_id)
+        obj.append("cart_id", cart_id)
+        obj.append("quantity", quantity)
+        return this._http.post(this.URL+'/add', obj )
+    }
 }

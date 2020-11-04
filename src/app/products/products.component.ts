@@ -13,6 +13,9 @@ export class ProductsComponent implements OnInit {
 	name: FormControl = new FormControl('')
 	sku: FormControl = new FormControl('')
 	description: FormControl = new FormControl('')
+	product_id: FormControl = new FormControl('')
+	cart_id: FormControl = new FormControl('')
+	quantity: FormControl = new FormControl('')
 	products:  Product[] = []
 	id = ''
 
@@ -65,6 +68,18 @@ export class ProductsComponent implements OnInit {
 			this.sku.setValue(response.sku)
 			this.description.setValue(response.description)
 			this.id = response.id
+		})
+	}
+
+	addProductToCart():void {
+		let product_id = this.product_id.value;
+		let cart_id = this.cart_id.value;
+		let quantity = this.quantity.value;
+		this._productService.addProductToCart(product_id, cart_id, quantity).subscribe(() => { 
+			this.getProducts()
+			this.product_id.setValue("")
+			this.cart_id.setValue("")
+			this.quantity.setValue("")
 		})
 	}
 

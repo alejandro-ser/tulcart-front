@@ -1,34 +1,56 @@
-<form class="card m-3">
-    <input  [formControl]="name"
-            class="p-2 mb-2" placeholder="Nombre"/>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
 
-    <input  [formControl]="sku"
-            class="p-2 mb-2" placeholder="Sku"/>
+            <div class="row row-cols-3">
 
-    <input  [formControl]="description"
-            class="p-2 mb-2" placeholder="Description"/>
+                <div class="col my-2" *ngFor="let product of products">
+            
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- <p>{{product.id}}</p> -->
+                            <p class="mb-0"><b>Nombre: </b><br>{{product.name}}</p>
+                            <p class="mb-0"><b>SKU: </b><br>{{product.sku}}</p>
+                            <p class="mb-0"><b>Descripción: </b><br>{{product.description}}</p>
+                        </div>
+                        <div class="card-footer p-2">
+                            <div class="d-flex justify-content-around">
+                                <button (click)="deleteProduct(product.id)"
+                                class="btn btn-danger btn-sm">
+                                    Elminiar
+                                </button>
+                                <button (click)="getProduct(product.id)"
+                                    class="btn btn-success btn-sm">
+                                    Actualizar
+                                </button>
+                            </div>
+                            <button class="btn btn-primary btn-sm btn-block mt-1">
+                                Agregar al carro
+                            </button>
+                        </div>
+                    </div>
 
-    <button (click)="addProduct()" class="btn btn-success">
-          Aceptar
-    </button>
-</form>
+                </div>
 
-<ul class="list-group m-3">
-    <li class="list-group-item" *ngFor="let product of products">
-        <p>{{product.id}}</p>
-        <p>{{product.name}}</p>
-        <p>{{product.sku}}</p>
-        <p>{{product.description}}</p>
-        <div class="d-flex flex-md-row-reverse"></div>
-        <button (click)="deleteProduct(product.id)"
-           class="btn btn-danger mr-2">
-            Elminiar
-        </button>
-        <button (click)="getProduct(product.id)"
-            class="btn btn-success">
-            Actualizar
-        </button>
-    </li>
+            </div>
 
-</ul>
+        </div>
+        <div class="col-4">
+            <form class="card m-3">
+                <input  [formControl]="name"
+                        class="p-2 mb-2" placeholder="Nombre"/>
+        
+                <input  [formControl]="sku"
+                        class="p-2 mb-2" placeholder="Sku"/>
+        
+                <input  [formControl]="description"
+                        class="p-2 mb-2" placeholder="Description"/>
+        
+                <button (click)="addProduct()" class="btn btn-success">
+                    Aceptar
+                </button>
+            </form>
+        </div>
+    </div>
 
+</div>
