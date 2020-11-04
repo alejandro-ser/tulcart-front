@@ -1,5 +1,15 @@
 # TulcartFront
 
+## Iniciar proyecto
+
+- Clonar este repositorio `https://github.com/alejandro-ser/tulcart-front`
+- Ingresar al directorio `cd tulcart-front`
+- Ejecutar el comando `npm install` para instalar las dependencias
+- Ejecuatar el comando `ng serve -o` para iniciar la app en servidor local
+- Abrir la siguiente dirección `http://localhost:4200/` en el navegador
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 
 ## Development server

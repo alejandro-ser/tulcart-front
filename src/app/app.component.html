@@ -1,11 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-dark badge-primary">
-	<a class="navbar-brand" href="/book">Tulcar</a>
-	<ul class="navbar-nav">
+	<a class="navbar-brand" href="/book">Tulcart</a>
+	<!-- <ul class="navbar-nav">
 		<li class="nav-item active">
 			<a class="nav-link" href="/book">Productos</a>
 		</li>
-	</ul>
+	</ul> -->
 </nav>
 
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+			
+			<app-products></app-products>
+
+        </div>
+        <div class="col-4">
+
+			<app-carts></app-carts>
+			
+        </div>
+    </div>
+
+</div>

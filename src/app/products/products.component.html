@@ -1,56 +1,48 @@
-<div class="container">
-    <div class="row">
-        <div class="col-8">
+<h1 class="text-center mt-2">Productos</h1>
 
-            <div class="row row-cols-3">
+<div class="row row-cols-3">
 
-                <div class="col my-2" *ngFor="let product of products">
-            
-                    <div class="card">
-                        <div class="card-body">
-                            <!-- <p>{{product.id}}</p> -->
-                            <p class="mb-0"><b>Nombre: </b><br>{{product.name}}</p>
-                            <p class="mb-0"><b>SKU: </b><br>{{product.sku}}</p>
-                            <p class="mb-0"><b>Descripción: </b><br>{{product.description}}</p>
-                        </div>
-                        <div class="card-footer p-2">
-                            <div class="d-flex justify-content-around">
-                                <button (click)="deleteProduct(product.id)"
-                                class="btn btn-danger btn-sm">
-                                    Elminiar
-                                </button>
-                                <button (click)="getProduct(product.id)"
-                                    class="btn btn-success btn-sm">
-                                    Actualizar
-                                </button>
-                            </div>
-                            <button class="btn btn-primary btn-sm btn-block mt-1">
-                                Agregar al carro
-                            </button>
-                        </div>
-                    </div>
+    <div class="col my-2" *ngFor="let product of products">
 
-                </div>
-
+        <div class="card">
+            <div class="card-body p-2">
+                <p class="mb-0"><b>Nombre: </b><br>{{product.name}}</p>
+                <p class="mb-0"><b>SKU: </b><br>{{product.sku}}</p>
+                <p class="mb-0"><b>Descripción: </b><br>{{product.description}}</p>
             </div>
-
-        </div>
-        <div class="col-4">
-            <form class="card m-3">
-                <input  [formControl]="name"
-                        class="p-2 mb-2" placeholder="Nombre"/>
-        
-                <input  [formControl]="sku"
-                        class="p-2 mb-2" placeholder="Sku"/>
-        
-                <input  [formControl]="description"
-                        class="p-2 mb-2" placeholder="Description"/>
-        
-                <button (click)="addProduct()" class="btn btn-success">
-                    Aceptar
+            <div class="card-footer p-2">
+                <!-- <div class="d-flex justify-content-around">
+                    <button (click)="deleteProduct(product.id)"
+                    class="btn btn-danger btn-sm">
+                        Elminiar
+                    </button>
+                    <button (click)="getProduct(product.id)"
+                        class="btn btn-success btn-sm">
+                        Actualizar
+                    </button>
+                </div> -->
+                <button class="btn btn-primary btn-sm btn-block mt-1">
+                    Agregar al carro
                 </button>
-            </form>
+            </div>
         </div>
+
     </div>
 
 </div>
+
+
+<!-- <form class="card m-3">
+    <input  [formControl]="name"
+            class="p-2 mb-2" placeholder="Nombre"/>
+
+    <input  [formControl]="sku"
+            class="p-2 mb-2" placeholder="Sku"/>
+
+    <input  [formControl]="description"
+            class="p-2 mb-2" placeholder="Description"/>
+
+    <button (click)="addProduct()" class="btn btn-success">
+        Aceptar
+    </button>
+</form> -->

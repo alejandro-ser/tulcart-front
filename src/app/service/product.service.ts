@@ -6,8 +6,11 @@ import { Observable } from 'rxjs'
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductService {
+
     URL = "http://localhost/tulcart-api/public/api/products";
+    
     constructor(private _http :HttpClient) { }
 
     getProducts(): Observable<Product[]> {

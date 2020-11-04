@@ -1,1 +1,11 @@
-<p>carts works!</p>
+<h1 class="text-center mt-2">Carrito</h1>
+
+<ul class="list-group mt-2">
+    <li class="list-group-item d-flex justify-content-between align-items-center"
+        *ngFor="let product of products">
+        <p class="mb-0">{{product.name}}</p>
+      <span class="badge badge-primary badge-pill">{{product.pivot.quantity}}</span>
+    </li>
+</ul>
+
+<a href="" class="btn btn-success btn-block mt-2">Checkout</a>
